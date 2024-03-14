@@ -40,14 +40,9 @@
                             href="https://pixabay.com/de/photos/haus-heimat-skurrile-film-hobbit-2616607/">pixabay@StockSnack
                         </a>)</figcaption>
                 </center>
-            <h3>Übersichtskarte</h3>
-                <div id="map" style="width: 90%; height:600px"></div>
-                var map = L.map('map').setView([-37.8575, 175.679722], 13);
-                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    maxZoom: 19,
-                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-                }).addTo(map);
             </figure>
+            <h3>Übersichtskarte</h3>
+            <div id="map" style="width: 90%; height:600px"></div>
             <h3>Geschichte vor dem Filmset</h3>
             <p style="text-align: justify">Die Geologie des Gebiets ist die der Hinuera-Formation, einer Gruppe
                 alluvialer Schluffe, Sande und Kies, die in der letzten Eiszeit abgelagert wurden . Ursprünglich
@@ -131,6 +126,28 @@
             </nav>
         </footer>
     </main>
+    <script>
+        var map = L.map('map').setView([-37.8575, 175.679722], 13);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+        var marker = L.marker([-37.8575, 175.679722]).addTo(map);
+        marker.bindPopup("<b>Hier liegt das Hobbition-Filmset</b><br>Neuseeland").openPopup();
+       // var popup = L.popup()
+        //    .setLatLng([-37.8575, 175.679722])
+         //   .setContent("Hier liegt das Hobbition-Filmset.")
+         //   .openOn(map);
+        var popup = L.popup();
+        function onMapClick(e) {
+            popup
+                .setLatLng(e.latlng)
+                .setContent("You clicked the map at " + e.latlng.toString())
+                .openOn(map);
+        }
+
+        map.on('click', onMapClick);
+    </script>
 </body>
 
 </html>
