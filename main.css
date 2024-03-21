@@ -1,0 +1,90 @@
+/* CSS-Stile für die Neuseelandreise */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Open+Sans:ital@0;1&family=Roboto:wght@300&display=swap');
+/*importieren von Schriftart, nur einmal machen, seriöse Webseite eigentlich herunterladen und benennen*/
+body {
+    font-family: 'Open Sans', sans-serif; /* Textart */
+    background-color: #ffffff;
+    max-width: 1280px;
+    margin: auto; /* Zentrieren der Seite*/
+}
+
+header>img {
+    max-width: 100%;
+}
+
+header a img {
+    border-radius: 50%; /* User Bild rund */
+    display: block; /* immer in Blöcken bei html */
+    margin: auto; 
+    margin-top: -50px; /* hochsetzen des Bildes*/
+}
+
+main {
+    max-width: 1024px;
+    margin: auto;
+    margin-top: -50px;
+    border-left: 1px dashed gray;
+    border-right: 1px dashed gray;
+    border-bottom: 1px dashed gray;
+}
+
+article {
+    padding: 1em; /* 1em = 16 px, Proportional Schriften bearbeiten */
+}
+
+article p {
+    font-family: 'Roboto', sans-serif;
+    text-align: justify;
+    line-height: 1.2em;
+}
+
+article h1,
+article h2,
+article h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+article figure>img {
+    width: 100%;
+}
+
+#map {
+    width: 90%;
+    height: 600px;
+    border: 1px solid silver;
+    margin: auto;
+}
+
+footer {
+    text-align: center;
+    padding: 1em 2em 3em 2em; /* oben, rechts, unten, links*/
+}
+
+footer nav {
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+}
+
+a {
+    color: black;
+}
+
+header img,
+figure>img,
+#map {
+    box-shadow:
+        0 4px 8px 0 rgba(0, 0, 0, 0.2), /* Wert Rot,Grün,Blau,Transparenz*/
+        0 6px 20px 0 rgba(0, 0, 0, 0.2); /*Lage Shadow, Shadow Generator*/
+}
+
+@media screen and (max-width: 1280px) {
+    main {
+        border: none;
+    }
+
+    figure {
+        margin-left: 0;
+        width: 100%;
+    }
+}
