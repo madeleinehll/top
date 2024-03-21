@@ -10,10 +10,10 @@ var circle = L.circle([-37.8575, 175.679722], {
     fillOpacity: 0.5,
     radius: 200
 }).addTo(map);
-circle.bindPopup("<strong> Hier ist Auckland </strong>").openPopup();
+circle.bindPopup("<strong> Hier ist das Hobbingen-Filmset </strong>").openPopup();
 // var popup = L.popup()
 //    .setLatLng([-36.833333, 174.8])
-//   .setContent("Hier liegt das Hobbition-Filmset.")
+//   .setContent("Hier liegt das Hobbingen-Filmset.")
 //   .openOn(map);
 var popup = L.popup();
 function onMapClick(e) {
