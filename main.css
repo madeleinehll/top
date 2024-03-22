@@ -68,7 +68,20 @@ footer nav {
 }
 
 a {
-    color: black;
+    color: rgb(0, 0, 0);
+}
+
+nav>a {
+    background-color: rgb(13, 81, 48);
+    color: white;
+    padding: 0.5em;
+    margin: 1em;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+nav>a:hover {
+    background-color: rgb(13, 81, 48);
 }
 
 header img,
