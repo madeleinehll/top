@@ -1,9 +1,11 @@
 let lat = -37.8575;
 let lng = 175.679722;
-let zoom = 13
+let zoom = 2
+let lat2 = 9.89
+let lng2 = 10.89
 
 let map = L.map('map', {
-    center: [lat, lng],
+    center: [lat2, lng2],
     zoom: zoom
 });
 
