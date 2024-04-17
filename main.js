@@ -4,25 +4,15 @@ let zoom = 13
 
 let map = L.map('map', {
     center: [lat, lng],
-    zoom:zoom 
+    zoom: zoom
 });
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
-var circle = L.circle([-37.8575, 175.679722], {
-    color: 'red',
-    fillColor: '#f03',
-    fillOpacity: 0.5,
-    radius: 200
-}).addTo(map);
-circle.bindPopup("<strong> Hier ist das Hobbingen-Filmset </strong>").openPopup();
-// var popup = L.popup()
-//    .setLatLng([-36.833333, 174.8])
-//   .setContent("Hier liegt das Hobbingen-Filmset.")
-//   .openOn(map);
-var popup = L.popup();
+
+let popup = L.popup();
 function onMapClick(e) {
     popup
         .setLatLng(e.latlng)
@@ -31,3 +21,8 @@ function onMapClick(e) {
 }
 
 map.on('click', onMapClick);
+
+L.control.scale({
+    imperial: false,
+    maxWidth: 200
+}).addTo(map);
